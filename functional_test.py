@@ -1,8 +1,31 @@
 from selenium import webdriver
+import unittest
+
+# browser = webdriver.Chrome(r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+# browser.get('http://localhost:8000')
+# 
+# 
+# assert 'To-Do' in browser.title
+# 
+# browser.quit()
+
+class NewVisitorTest(unittest.TestCase):
+    
+    
+    def setUp(self):
+        self.browser = webdriver.Chrome(r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+    
+    def tearDown(self):
+
+        self.browser.quit()
+
+    def test_can_start_a_list_and_retrieve_it_later(self):
+
+        self.browser.get('http://127.0.0.1:8000/')
+        self.assertIn('To-Do',self.browser.title)
+        self.fail('Finish the test')
 
 
-browser = webdriver.Chrome(r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
-browser.get('http://localhost:8000')
 
-
-assert 'Django' in browser.title
+if __name__ == '__main__':
+    unittest.main()
