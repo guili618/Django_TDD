@@ -101,7 +101,7 @@ class NewVisitorTest(LiveServerTestCase):
 
 
         edith_list_url = self.browser.current_url
-        self.assertRegex(edith_list_url,'/lists/. +')
+        self.assertRegex(edith_list_url,'/lists/.+')
 
 
 
