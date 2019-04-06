@@ -59,7 +59,9 @@ class HomePageTest(TestCase):
         response = self.client.get('/')
     
         self.assertIn('itemey 1',response.content.decode())
-        self.assertIn('itemey 2',response.content.decode())                 
+        self.assertIn('itemey 2',response.content.decode())  
+
+
     # def test_home_page_return_correct_html(self):
         # request = HttpRequest()
         # response = home_page(request)
